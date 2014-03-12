@@ -1,0 +1,169 @@
+{include file='../general/facebook_init.tpl'}
+<script>
+	page = 'board';
+	$(".chosen-select").chosen();
+</script>
+<!--	
+**
+** BEGIN BEAMS 
+**
+-->		
+<div id="beams">
+	{foreach from=$beams item=beam}
+		{if $beam->type == 'offer'}
+		<div class="beam board_{$beam->category_id}{if $beam->creator == 1} highlight{/if}" id="redemption_option_cell_{$beam->id}">
+			<div class="beam-title">{$beam->creator_name}</div><!-- end div.beam-title -->
+			<div class="beam-content-left">
+				{include 
+					file='../general/modal.tpl' 
+					target="/beam/view.php?beam_id={$beam->id}" 
+					title="{$beam->subject}" 
+					image="/users/avatar.php?member_id={$beam->creator}" 
+					cssClass="beam-logo board_"
+				}
+
+				<div class="beam-options">	
+					{if (!$beam->status && !$market) || $beam->status == 'has_beam'}			
+					<a href="javascript:void(0);" data-dropdown="snooze{$beam->id}"  class="beam-option tip-right" title="Snooze this beam" data-tooltip>	
+						<span class="fa fa-stack">
+						  <i class="fa fa-square fa-stack-2x"></i>
+						  <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i>
+						</span>						
+					</a>
+					  <ul id="snooze{$beam->id}" class="f-dropdown snooze-dropdown" data-dropdown-content>
+						<li class="dropdown-content-title">Later</li>
+						  <li><a href="javascript:void(0);" onClick="bb.ajax.execute('snooze_offer', '{$beam->id}:1');">1 Hour</a></li>
+						  <li><a href="javascript:void(0);" onClick="bb.ajax.execute('snooze_offer', '{$beam->id}:5');">5 Hours</a></li>
+						  <li><a href="javascript:void(0);" onClick="bb.ajax.execute('snooze_offer', '{$beam->id}:24');">1 Day</a></li>
+						  <li><a href="javascript:void(0);" onClick="bb.ajax.execute('snooze_offer', '{$beam->id}:168');">1 Week</a></li>
+						</ul>
+					<a href="javascript:void(0);" data-dropdown="share{$beam->id}" class="beam-option tip-right"  title="Share this beam" data-tooltip>	
+						<span class="fa fa-stack">
+						  <i class="fa fa-square fa-stack-2x"></i>
+						  <i class="fa fa-share fa-stack-1x fa-inverse"></i>
+						</span>						
+					</a>
+					  <ul id="share{$beam->id}" class="f-dropdown share-dropdown" data-dropdown-content>
+						<li class="dropdown-content-title">SHARE BY</li>
+						  <li><div class="g-plus" data-action="share" data-annotation="bubble" data-height="20" data-href="{$BBCON->getValue('BASE_SITE_URL')}/index.php?beam_id={$beam->id}"></div></li>
+						  <li><div class="fb-share-button"  data-type="button_count" data-href="{$BBCON->getValue('BASE_SITE_URL')}/index.php?beam_id={$beam->id}" data-type="link"></div></li>
+						  <li><a href="https://twitter.com/intent/tweet?original_referer={$BBCON->getValue('BASE_SITE_URL')}&url={$BBCON->getValue('BASE_SITE_URL')}/index.php?beam_id={$beam->id}&text={$beam->subject}" class="twitter-share-button">Tweet</a></li>
+						</ul>
+						<a href="javascript:void(0);" data-dropdown="offer_share{$beam->id}" class="beam-option action-icon tip-right" data-tooltip title="Gift this beam">
+							<span class="fa fa-stack">
+							  <i class="fa fa-square fa-stack-2x"></i>
+							  <i class="fa fa-gift fa-stack-1x fa-inverse"></i>
+							</span>						
+							
+							</a>
+						 <ul id="offer_share{$beam->id}" class="f-dropdown gift-dropdown" data-dropdown-content>
+							<li class="dropdown-content-title">Gift</li>
+							  <li><a href="javascript:void(0);" onClick="bb.ajax.execute('share_redemption', '{$beam->id}:em:gs');">Email</a></li>
+						</ul>
+					{/if}
+				</div>
+			</div><!-- end div.beam-section-left -->
+			
+			<div class="beam-content-right">
+				<a href="javascript:void(0);"
+				 	data-target-url="/beam/view.php?beam_id={$beam->id}"
+					data-modal-title="{$beam->subject} fro"
+					data-modal-class=""
+					data-button-id=""
+					data-button-txt=""						
+					class="bb-modal">
+				
+				<div class="beam-price">
+							${$beam->value}
+				</div>
+				<div class="beam-content">
+							{$beam->subject}
+				</div>
+				</a>
+			</div>
+			<div class="beam-links">
+				{if (!$beam->status && !$market) || $beam->status == 'has_beam'}
+				<div class="beam-delete">
+					<a href="javascript:void(0);"  class="beam-delete-link bb_action tip-top" data-bb-action-value="beam_delete" data-bb-action-details="{$beam->id}" title="Delete this beam?" data-tooltip><i class="fa fa-trash-o"></i></a>
+				</div>
+				{/if}
+				<div class="beam-expiration">
+					<div class="beam-exp-icon exp-icon-red">	
+						<i class="fa fa-clock-o fa-2x"></i>
+					</div>
+					<div class="beam-exp-days">	
+						<div class="beam-exp-title">Days</div>
+						<div class="beam-exp-count">{$beam->expiration_array->day}</div>
+					</div>
+					
+					<div class="beam-exp-hours">
+						<div class="beam-exp-title">Hours</div>
+						<div class="beam-exp-count">{$beam->expiration_array->hour}</div>
+					</div>
+					<div class="beam-exp-mins">	
+						<div class="beam-exp-title">Mins</div>
+						<div class="beam-exp-count">{$beam->expiration_array->minute}</div>							
+					</div>
+				</div>
+				{if !$beam->status || $beam->status != 'redeemed'}
+					{if $BBCON->isLoggedIn()}
+						<a href="javascript:void(0);" class="beam-redeem bb_action" data-bb-action-value="redeem_offer" data-bb-action-details="{$beam->id}">Reserve <i class="icon-double-angle-right"></i></a>		
+					{else}
+						<a href="/index.php?showLogin=true" class="beam-redeem">Reserve <i class="icon-double-angle-right"></i></a>
+					{/if}
+				{/if}		
+			</div>
+		</div><!-- end div.beam -->
+	{else}
+		<div class="msg board_messages">
+				<div class="msg-header">
+					<div class="msg-avatar">
+						<img src="/users/avatar.php?member_id={$beam->creator}"  height="60" width="60" class=""  alt="" />
+					</div>
+					<div class="msg-sender">
+						{$beam->creator_name}
+					</div>
+				</div><!-- end div#msg-header -->
+				<div class="msg-body">
+					<div class="msg-subject">
+						{$beam->subject}
+					</div><!-- end div.msg-subject -->
+					<div class="msg-content">
+						{$beam->message|truncate:100:"..."} 
+												
+						<a href="javascript:void(0);"
+						 	data-target-url="/beam/view.php?beam_id={$beam->id}"
+							data-modal-title="Message Preview"
+							data-modal-class="fixed-small"
+							data-button-id=""
+							data-button-txt=""						
+							class="bb-modal readmore">
+							Readmore <i class="fa fa-caret-right"></i>
+						</a>
+						
+					</div><!-- end div.msg-content -->
+				</div><!-- end div.msg-body -->
+				<div class="msg-footer">
+					<a href="javascript:void(0);"  class="delete-msg bb_action" data-bb-action-value="beam_delete" data-bb-action-details="{$beam->id}">Delete</a>
+					<a href="javascript:javascript:bb.navigate_main('create_beam', {$beam->creator});"  class="reply-msg">Reply</a>
+				</div><!-- end div.msg-footer -->
+			</div><!-- end div.msg -->	
+	{/if}
+	{foreachelse}
+		<div class="msg action_messages">
+			You have no offers or messages. Search for businesses by name to see whats around you.
+		</div><!-- end div.msg -->	
+	{/foreach}
+</div>
+<script type="text/javascript">
+	(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/platform.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+</script>
+<!--	
+**
+** END BEAMS 
+**
+-->

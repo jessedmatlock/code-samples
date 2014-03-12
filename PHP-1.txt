@@ -1,0 +1,110 @@
+<?php 
+	$nav = 'home';
+	$parent = 1;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<title>The Woodlands and Houston — Texas Center for Cosmetic and Implant Dentistry</title>
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<?php if (file_exists("inc/head.php")){include_once "inc/head.php";} ?>	
+</head>
+<body>
+<div id="wrapper"><!-- #wrapper -->
+	<header id="header">
+		<?php if (file_exists("inc/header.php")){include_once "inc/header.php";} ?>	
+	</header>
+	<nav id="nav">
+		<?php if (file_exists("inc/nav.php")){include_once "inc/nav.php";} ?>	
+	</nav>
+	<div id="content-wrapper" class="">
+		<div id="content-top">
+	      <h1>Cosmetic Dentistry</h1>
+		</div>
+			<div id="content" class="left"><!-- #content -->
+				<h2>Transform Your Smile with Cosmetic Dentistry - Houston, The Woodlands </h2>
+				<p>If you have always dreamed of having a beautiful, healthy  smile, cosmetic dentistry may be the solution you’ve been looking for.  The Texas Center  for Cosmetic and  Implant Dentistry  in The Woodlands,  also serving patients from Houston  and surrounding communities, provides state-of-the-art aesthetic  treatments.  <a href="dr-lewis.php">Dr.  Guy M. Lewis</a> and his team of cosmetic  dentists offer a range of options to repair and revive your smile, all  provided in the comfort of a soothing <a href="practice.php">dental spa atmosphere</a>.  Visit our <a href="http://lovethatsmile.einsteinapps.com/photogallery/">Smile  Makeover Gallery</a> to view some examples of how our dentists have given  others just like you the dazzling, one-of-a-kind smiles they have always  wanted.</p>
+				<ul>
+				  <li><a href="#cosmetic-dentistry-options">Cosmetic Dentistry Treatment Options</a>
+				    <ul>
+				      <li><a href="#porcelain-veneers">Porcelain Veneers</a></li>
+				      <li><a href="#teeth-whitening">Teeth Whitening</a></li>
+				      <li><a href="#invisalign">Invisalign&reg;</a></li>
+				      <li><a href="#porcelain-crowns">Porcelain Crowns</a></li>
+				      <li><a href="#dental-bridges">Dental Bridges</a></li>
+				      <li><a href="#dental-bonding">Dental Bonding</a></li>
+				      <li><a href="#tooth-colored-fillings">Tooth-colored Fillings</a></li>
+				      <li><a href="#smile-makeover">Smile Makeover</a></li>
+				    </ul>
+				  </li>
+				</ul>
+				<h2 id="cosmetic-dentistry-options">Cosmetic Dentistry Treatment Options</h2>
+				<p>We provide a range of cosmetic  dentistry options at our office in The Woodlands.   To learn more about any of these treatments, or to schedule a consultation to discuss your <a href="smile-makeover.php">smile  makeover</a> possibilities, contact the <a href="contact.php">Texas Center for Cosmetic and  Implant Dentistry</a>.</p>
+
+				  <h3 id="porcelain-veneers">Porcelain Veneers</h3>
+				  <p><a href="porcelain-veneers.php">Porcelain  veneers</a> are among the most advanced and effective cosmetic dentistry treatments available.  Veneers cover the front surfaces of teeth to  conceal aesthetic flaws and can be placed in just two office visits.  At our practice, we offer traditional veneers  as well as no-prep <a href="overview-glewis-veneers.php">G.  Lewis Veneers</a>.</p>
+				  
+				  <h3 id="teeth-whitening">Teeth Whitening</h3>
+				  <p><a href="teeth-whitening.php">Teeth  whitening</a> is one of the quickest ways to rejuvenate your smile.  Professional bleaching removes stains from  the enamel to whiten the teeth by up to 10 shades.  </p>
+				  
+				  <h3 id="invisalign">Invisalign&reg;</h3>
+				  <p>For patients who want to straighten their teeth without metal braces, <a href="invisalign.php">Invisalign&reg;</a> can be an excellent option.  Invisalign&reg;  uses a series of virtually invisible, plastic aligners to gradually reposition  the teeth.</p>
+
+				  <h3 id="porcelain-crowns">Porcelain Crowns</h3>
+				  <p>Crowns can be used to cover and protect damaged teeth or to anchor  a dental bridge.  They are also used in <a href="dental-implants.php">implant  dentistry</a>.  We offer beautiful <a href="crowns-bridges.php#porcelain-crowns">porcelain  crowns</a> that blend seamlessly with surrounding natural teeth.</p>
+				  
+				  <h3 id="dental-bridges">Dental Bridges</h3>
+				  <p>For patients who are missing one or more of their natural teeth, our cosmetic dentistry  practice offers attractive porcelain <a href="crowns-bridges.php#dental-bridges">dental  bridges</a>.  Traditional bridges are  comprised of an artificial tooth or teeth that are secured into place by crowns  attached to the natural teeth on either side of a gap.  Bridges can also be stabilized by dental  implants for a secure, lasting restoration.  </p>
+				  
+				  <h3 id="dental-bonding">Dental Bonding</h3>
+				  <p>If your teeth are affected by minor chips, cracks, or discoloration, <a href="bonding-fillings.php#dental-bonding">dental  bonding</a> may be all you need to restore their natural beauty.  The tooth-colored bonding material is applied  to the surface of the damaged teeth to conceal aesthetic flaws.</p>
+
+				  <h3 id="tooth-colored-fillings">Tooth-colored Fillings</h3>
+				  <p><a href="bonding-fillings.php#white-fillings">White  (tooth-colored) fillings</a> are an excellent alternative to traditional  metallic fillings.  They blend flawlessly  with the teeth and do not present many of the health hazards or tooth  sensitivity associated with metal fillings.  </p>
+				  
+				  <h3 id="smile-makeover">Smile Makeover</h3>
+				  <p>With a <a href="smile-makeover.php">smile  makeover</a>, our dentists can completely transform your smile.  By combining restorative and cosmetic dentistry  treatments, we are able to restore form and function to smiles affected by  discoloration, broken or missing teeth, and other problems.</p>
+          		<div class="clear"></div>
+			</div><!-- /#content -->			
+			
+			<aside id="aside" class="right"><!-- #aside -->
+				<h2>Contact Us</h2>
+				<div id="sidebar_inner">
+					<p>Dr. Lewis and his team can help you improve your smile with a range of  state-of-the-art cosmetic  dentistry options.  If you live in  The Woodlands, Houston,  or a nearby area, contact  the Texas Center for Cosmetic and  Implant Dentistry to schedule a consultation.</p>
+
+					<?php if (file_exists("inc/contact-form.php")){include_once "inc/contact-form.php";} ?>	
+				</div><!-- end sidebar_inner -->
+				<script type="text/javascript" src="http://www.deardoctor.com/library/widget/ddw1.2.js"></script> 
+				<script type="text/javascript">
+					var Widget = new DearDoctorWidget();
+					// Configure the widget
+					Widget.Horizontal = true;
+					Widget.ShowMainContent = true;
+					Widget.NumberOfCovers = 1;
+					Widget.HeaderBackground = "#474747";
+					Widget.HeaderLabelColor = "#666666";
+					Widget.Width = -1;
+					Widget.BorderColor = "#474747";
+					Widget.ButtonText = "Search";
+					Widget.TitleText = "Patient Library";
+					// Pass the Dentist ID# 
+					Widget.DentistID = "thewoodlandsdentist";
+					
+					// Show the widget
+					Widget.show();
+				</script>
+				
+			</aside><!-- /#aside -->
+			<div class="clear"></div>
+			<div id="bottom">
+				<?php if (file_exists("inc/bottom.php")){include_once "inc/bottom.php";} ?>	
+			</div>
+		</div>
+	<div id="footer">
+		<?php if (file_exists("inc/footer.php")){include_once "inc/footer.php";} ?>	
+	</div>
+</div><!-- /#wrapper -->
+<?php if (file_exists("inc/ga.php")){include_once "inc/ga.php";} ?>	
+</body>
+</html>

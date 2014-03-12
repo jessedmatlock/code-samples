@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php include_once('_metatags.php'); ?>
+    <?php include_once('_assets.php'); ?>
+
+<!--	<link media="screen,print" rel="stylesheet" href="/css/ui-grey/jquery-ui-1.8.9.custom.css" />-->
+<!--	<script src="/js/jquery-ui-1.8.9.custom.min.js"></script>-->
+	
+	
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+</head>
+
+<body class="ui-grey" id="homepage">
+
+    <?php include_once('_header.php'); ?>
+	
+	<div id="main_wrapper" class=""><!-- start main_wrapper div -->
+		
+	<section id="" class="section"><!-- start top_ad section -->
+		<div id="top_ad_wrapper">
+			<a href="javascript:void(0);" id="top_ad" class="horiz_ad"><img src="/css/728x90_ad.jpg" class="" id="" /></a>
+		</div>
+	</section><!-- end top_ad section -->
+	<section id="content" class="section sidebar_left sidebar_right ui-corner-all"><!-- start content section -->
+		<aside id="left_sidebar" class="ui-corner-left"><!-- start left_sidebar aside -->
+			<div id="filter_selection_wrapper" class=""><!-- start filter_selections div -->
+				<ul id="filter_selections" class="">
+					<li>Selection One <a href="javascript:void(0);" class="delete_selection" id="">x</a></li>
+				</ul>
+			</div><!-- end filter_selections div -->
+			<h3 id="select_categories" class="list_title">Search Options </h3>
+			
+			<h4 class="list_title">By Neighborhood <a href="javascript:void(0);" class="clear_filter">Clear All</a></h4>
+			<ul id="" class="check_list">
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Bang Na</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Bangkapi</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />...</label></li>
+				
+				<li class="submit" ><a href="javascript:void(0);" class="ui-corner-all" id="">Submit</a></li>
+			</ul>
+			
+			
+			
+			<h3 id="select_categories" class="list_title">Categories <a href="javascript:void(0);" class="clear_filter">Clear All</a></h3>
+			<ul id="cat_filter" class="check_list">
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label>
+					<ul id="" class="sub_cats">
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+					</ul>
+				</li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label>
+					<ul id="" class="sub_cats">
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+					</ul>	
+				</li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label>
+					<ul id="" class="sub_cats">
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+					</ul>
+				</li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label>
+					<ul id="" class="sub_cats">
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+						<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+					</ul>
+				</li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li><label for=""><input type="checkbox" name=""  id="" value="" />Category</label></li>
+				<li class="submit"><a href="javascript:void(0);" class="ui-corner-all" id="">Submit</a></li>
+				
+			</ul>
+			<h3 id="by_neighborhood" class="list_title">By Neighborhood</h3>
+			<ul id="by_location" class="list">
+				<li><a href="javascript:void(0);" class="" id="">Location</a></li>
+				<li><a href="javascript:void(0);" class="" id="">Location</a></li>
+				<li><a href="javascript:void(0);" class="" id="">Location</a></li>
+				<li><a href="javascript:void(0);" class="" id="">Location</a></li>
+				<li><a href="javascript:void(0);" class="" id="">Location</a></li>
+				<li><a href="javascript:void(0);" class="" id="">Location</a></li>
+				<li><a href="javascript:void(0);" class="" id="">Location</a></li>
+				<li><a href="javascript:void(0);" class="" id="">Location</a></li>
+			</ul>
+		</aside><!-- end left_sidebar aside -->
+		<article id="main_content" class="main_content"><!-- start main_content article -->
+			
+
+			<?php echo $content; ?>
+					
+
+			
+		</article><!-- start main_content article -->
+		<aside id="right_sidebar" class="ui-corner-right"><!-- start right_sidebar aside -->
+
+            <?php if (Yii::app()->user->isGuest): ?>
+            <div class="rnd_box"><!-- start rnd_box div -->
+				<h3 class="box_title">Already a Member?</h3>
+                <?php $lform = $this->beginWidget('CActiveForm', array('id' => 'login_form', 'action' => '/user/login')); ?>
+				<ul class="horiz_form" >
+					<li class="options">
+						<div class="left_label"><?php echo $lform->labelEx($this->login_form, 'username'); ?></div>
+						<div class="option_inputs">
+                            <?php echo $lform->textField($this->login_form, 'username'); ?>
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label"><?php echo $lform->labelEx($this->login_form, 'password'); ?></div>
+						<div class="option_inputs">
+                            <?php echo $lform->passwordField($this->login_form, 'password'); ?>
+						</div>
+					</li>
+					<li class="buttons">
+						<?php echo CHtml::submitButton('Login', array('class' => 'primary_button')); ?>
+						<a href="javascript:void(0);" class="secondary_link forgotpass_form_link">Forgot Password ?</a>
+					</li>
+				</ul>
+                <?php $this->endWidget(); ?>
+			</div><!-- end rnd_box div -->
+            <?php endif; ?>
+
+			<div class="rnd_box"><!-- start rnd_box div -->
+				<h3 id="" class="box_title">Right Sidebar</h3>
+                <?php echo Yii::app()->request->urlReferrer; ?>
+				<ul id="" class="list">
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+				</ul>
+			</div><!-- end rnd_box div -->
+			
+			<a href="javascript:void(0);" id="" class="sidebar_ad">
+				<img src="/css/180x150.gif" class="" />
+			</a>
+			
+			<div class="rnd_box"><!-- start rnd_box div -->
+				<div id="accordion">
+					<h3><a href="#">Section 1</a></h3>
+					<div>
+						<ul id="" class="">
+							<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+							<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+							<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+							<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+							<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+							<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+							<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+							<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+							<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+						</ul>
+					</div>
+					<h3><a href="#">Section 2</a></h3>
+					<div>
+						<p>
+						Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+						purus. 
+						</p>
+					</div>
+					<h3><a href="#">Section 3</a></h3>
+					<div>
+						<p>
+						Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+						Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+						ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+						lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+						</p>
+						<ul>
+							<li>List item one</li>
+							<li>List item two</li>
+							<li>List item three</li>
+						</ul>
+					</div>
+					<h3><a href="#">Section 4</a></h3>
+					<div>
+						<p>
+						Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+						et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+						faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+						mauris vel est.
+						</p>
+						<p>
+						Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+						Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+						inceptos himenaeos.
+						</p>
+					</div>
+				</div><!-- end accordion -->
+				
+			</div><!-- end rnd_box div -->
+			
+			<div class="rnd_box"><!-- start rnd_box div -->
+				<h3 id="" class="box_title yellow">Right Sidebar</h3>
+				<ul id="" class="list">
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+				</ul>
+			</div><!-- end rnd_box div -->
+			
+			
+			<div class="rnd_box"><!-- start rnd_box div -->
+				<h3 id="" class="box_title red">Right Sidebar</h3>
+				<ul id="" class="list">
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+					<li><a href="javascript:void(0);" class="" id="">Text Link</a></li>
+				</ul>
+			</div><!-- end rnd_box div -->
+
+			
+			<a href="javascript:void(0);" id="" class="sidebar_ad">
+				<img src="css/180x150.gif" class="" />
+			</a>
+			
+			
+			
+			
+		</aside><!-- start right_sidebar aside -->
+	</section><!-- end content section -->
+			
+	<section id="bottom" class="wide_section"><!-- start bottom section -->
+		<a href="javascript:void(0);" id="" class="bottom_ad"><img src="/css/234x60.gif" class="" id="" /></a>
+		<a href="javascript:void(0);" id="" class="bottom_ad"><img src="/css/234x60.gif" class="" id="" /></a>
+		<a href="javascript:void(0);" id="" class="bottom_ad"><img src="/css/234x60.gif" class="" id="" /></a>
+		<a href="javascript:void(0);" id="" class="bottom_ad last"><img src="/css/234x60.gif" class="" id="" /></a>
+	</section><!-- end bottom section -->
+	</div><!-- end main_wrapper div -->
+	
+	
+	<div id="footer_wrapper" class=""><!-- start footer_wrapper div -->
+	<footer id="footer" class=""><!-- start footer footer -->
+		<div class="box_element" ><!-- begin box_element third -->
+		<ul id="" class="list">
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+		</ul>
+		</div><!-- end box_element third -->
+		<div class="box_element" ><!-- begin box_element third -->
+		<ul id="" class="list">
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+		</ul>
+		</div><!-- end box_element third -->
+		<div class="box_element last" ><!-- begin box_element third -->
+		<ul id="" class="list">
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+			<li><a href="javascript:void(0);" class="" id="">Footer Link</a></li>
+		</ul>
+		</div><!-- end box_element third -->
+	</footer><!-- end footer footer -->
+	</div><!-- end footer_wrapper div -->
+	
+	
+	<!-- this is for UI DIALOG USE.. CALLED ONCLICK OF .edit_profile_link -->								
+	<div id="edit_user_profile_dialog" title="Edit Profile" ><!-- start edit_user_profile_dialog div -->
+		<form action="" method="POST" accept-charset="utf-8" id="" class="">
+			<fieldset>
+				<ul id="edit_profile" class="horiz_form">
+					<li class="options">
+						<div class="left_label">Your Nickname</div>
+						<div class="option_inputs">
+							<span>First "</span>
+							<input type="text" name="" value="" class="mid_text"/>
+							<span>" LastName</span>
+							<em class="note">Superman, Uber Geek, etc.</em>
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">Your Tagline</div>
+						<div class="option_inputs">
+							<input type="text" name=""  value="" />
+							<em class="note">Superman, Uber Geek, etc.</em>
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">I love...</div>
+						<div class="option_inputs">
+							<textarea name=""></textarea>
+							<em class="note">Comma separated phrases (e.g. scuba diving, eating out, scooters)</em>
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">Find Me In</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">Central Bangkok, Isaan, Beach</em>
+
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">My Hometown</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">Udon Thani</em>
+
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">My Blog or Website</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">www.yourblog.wordpress.com</em>
+
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">When I'm not here...</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">I'm working my hands to the bone</em>
+
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">You Should Read My Reviews Because...</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">I'm funny, I go out all the time</em>
+
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">Favorite Reading</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">the dictionary, whatever my book club tells me</em>
+
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">Favorite Musician/Band</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">Dave Matthews Band, Backstreet Boys - kidding</em>
+
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">Favorite Movie</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">Ong Bak - duh, Iron Man 1/2</em>
+
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">Don't Tell Anyone Else But...</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">I just farted, I see dead people</em>
+
+						</div>
+					</li>
+					<li class="options">
+						<div class="left_label">Most Recent Discovery</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">My favorite pair of socks, fresh sushi at Central</em>
+
+						</div>
+					</li>
+					<li class="options last">
+						<div class="left_label">Current Crush</div>
+						<div class="option_inputs">
+							<input type="text" name="" value="" />
+							<em class="note">My best friends ex!, fast cars?</em>
+						</div>
+					</li>
+				</ul>
+			</fieldset>	
+		</form>		
+	</div><!-- end edit_user_profile_dialog div -->
+
+
+	<div id="login_form_dialog" title="Login to Your Account" class="dialog"><!-- start login_form_dialog div -->
+		<ul class="horiz_form" >
+			<li class="options">
+				<div class="left_label">Username <span class="required">*</span></div>
+				<div class="option_inputs">
+					<input type="text" name="" value="" class=""/>
+				</div>
+			</li>
+			<li class="options">
+				<div class="left_label">Password <span class="required">*</span></div>
+				<div class="option_inputs">
+					<input type="text" name="" value="" class=""/>
+				</div>
+			</li>
+			<li class="buttons">
+				<a href="javascript:void(0);" class="primary_button">Login</a>
+				<a href="javascript:void(0);" class="secondary_link forgotpass_form_link">Forgot Password ?</a>
+			</li>
+		</ul>
+	</div><!-- end login_form_dialog div -->
+
+	<div id="forgotpass_form_dialog" title="Reset Your Account Password"><!-- start forgotpass_form_dialog div -->
+		<ul class="horiz_form">
+		<li class="options">
+			<div class="left_label">Email <span class="required">*</span></div>
+			<div class="option_inputs">
+				<input type="text" name="" value="" class=""/>
+			</div>
+		</li>
+		<li class="buttons">
+			<a href="javascript:void(0);" class="primary_button">Reset Password</a>
+			<a href="javascript:void(0);" class="secondary_link">Don't Have Your Email ?</a>
+		</li>
+	</ul>
+	</div><!-- end forgotpass_form_dialog div -->
+	
+</body>
+
+</html>

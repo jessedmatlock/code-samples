@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js gt-ie9" lang="en"><!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="author" content="" />
+	<meta name="keywords" lang="en-us" content="" />
+	<meta name="date" content="" />
+	<meta name="description" content="" />
+	<meta name="robots" content="index, follow" />
+	<meta name="copyright" content="Copyright Giftie © 2012–2013 All Rights Reserved" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	
+	{if $view_beam} 
+		<!-- For Facebook Share -->
+		<meta property="og:url" content="{$BBCON->getValue('BASE_SITE_URL')}/index.php?beam_id={$view_beam}" />
+		<meta property="og:site_name" content="Giftie" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="{$beam->subject}" />
+		<meta property="og:image" content="{$BBCON->getValue('BASE_SITE_URL')}/users/avatar.php?member_id={$beam->creator}" />
+		<meta property="og:description" content="{$beam->message}" />
+		<meta property="fb:app_id" content="{$BBCON->getValue('facebook_api_key')}" />
+	{/if}
+
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+	<title>NDA Title</title>
+
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/foundation.css" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+	
+	<link rel="stylesheet" href="css/app.css" />
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+	<link rel="stylesheet" href="css/jquery.qtip.css" />
+	<link rel="stylesheet" href="css/jquery.msgbox.css" />
+	<link rel="stylesheet" href="css/chosen.css" />
+
+	<!--[if gte IE 9]>
+	  <style type="text/css">
+	    .gradient {
+	       filter: none;
+	    }
+	  </style>
+	<![endif]-->
+	<!--[if IE]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<script src="{$PATH_JS}vendor/jquery.js"></script>
+	<script src="{$PATH_JS}vendor/jquery-ui.js"></script>
+
+</head>
+<body class="">
+	
+	<div id="bb_main"></div>
+  <!-- body content here -->
+
+	<script src="{$PATH_JS}vendor/custom.modernizr.js"></script>
+	<script src="{$PATH_JS}foundation/foundation.js"></script>
+	<script src="{$PATH_JS}foundation/foundation.alerts.js"></script>
+	<script src="{$PATH_JS}foundation/foundation.dropdown.js"></script>
+	<script src="{$PATH_JS}foundation/foundation.reveal.js"></script>
+	<script src="{$PATH_JS}foundation/foundation.topbar.js"></script>
+	<script src="{$PATH_JS}responsive-tables.js"></script>
+	
+	<script src="{$PATH_JS}vendor/jquery.qtip.js"></script>
+	<script src="{$PATH_JS}vendor/jquery.msgbox.js"></script>
+	<script src="{$PATH_JS}vendor/chosen.jquery.min.js"></script>
+	
+	<script src="{$PATH_BB}controller.js"></script>
+	<script src="{$PATH_BB}ajax_controller.js"></script>
+	<script src="{$PATH_BB}ajax_request.js"></script>
+	<script src="{$PATH_BB}ajax_response.js"></script>
+	<script src="{$PATH_BB}ajax_error.js"></script>
+	<script src="{$PATH_BB}debug.js"></script>
+	<script src="{$PATH_BB}user.js"></script>
+	
+	<script type="text/javascript" charset="utf-8">		
+	  bb = new bb_controller('{$smarty.session.bb_con->outputForJS()}');
+	  bb.monitor_logout();	
+	  bb.monitor_badges();
+	  {foreach from=$smarty.session.bb_con->getErrors() item=error}
+	  	bb.add_error('{$error.message}');
+	  {/foreach}
+	  {if $view_beam}
+	  bb.view_beam_id={$view_beam};
+	  {/if}
+	  
+	  {if $smarty.get.showLogin}
+		showLogin = true;
+	  {else}
+	  	showLogin = false;
+	  {/if}
+	
+	$(document).ready(function() {
+		
+			// init tooltips and positioning classes
+			$(document).on('mouseenter', '[data-tooltip]', function(event) {
+
+				var posMy = 'top center', 
+					posAt = 'bottom center';
+
+				if( $(this).is('.tip-top') ){ posMy = 'bottom center';posAt = 'top center';}
+				if( $(this).is('.tip-right') ){ posMy = 'left center';posAt = 'right center';}
+				if( $(this).is('.tip-bottom') ){ posMy = 'top center';posAt = 'bottom center';}			
+				if( $(this).is('.tip-left') ){ posMy = 'right center';posAt = 'left center';}
+
+
+			    $(this).qtip({
+			        overwrite: true, // Make sure the tooltip won't be overridden once created
+			        show: {
+			            event: event.type, // Use the same show event as the one that triggered the event handler
+			            ready: true // Show the tooltip as soon as it's bound, vital so it shows up the first time you hover!
+			        },
+					hide: {
+						when: { event: 'click mouseleave' },
+						effect: { type: 'slide' }
+					},
+			        position: {
+			            my: posMy,
+			            at: posAt
+			        },
+					style: {
+						classes: 'qtip-giftie'
+					}
+			    }, event); // Pass through our original event to qTip
+			});
+
+			$(document).on('click', '[data-tooltip]', function(event) {
+				$(".qtip").remove();
+			});
+		
+		
+		
+		// **************************** //
+		//   DEFAULT MODAL JS		    //
+		// **************************** //
+		$('body').on('click','.bb-modal',function(e) {
+		    e.preventDefault();
+
+			var modal = $('#bb-modal'),
+				targeturl = $(this).data('target-url'),
+	        	modaltitle = $(this).data('modal-title'),
+	        	modalclass = $(this).data('modal-class'),
+		        buttonid = $(this).data('button-id'),
+		        buttontxt = $(this).data('button-txt');
+				
+				$.ajax({
+					url: targeturl,
+					dataType: "html",
+					cache: false
+				}).done(function( response ) {
+					// now, let's load the HTML returned from the AJAX call
+					modal.find('.modal-body').empty().html(response);
+					
+					//set the text of the modal title
+			        modal.find('.modal-header-title').html(modaltitle);
+
+					//add class to modal, if needed, to override modal size/placement
+					modal.addClass(modalclass);
+
+
+			        // set the button.modalsave id so we can target the click function of it.
+					if(buttonid !== '' || buttontxt !== ''){
+						modal.addClass('show-footer');
+						modal.find('.modalsave').attr("id",buttonid); 
+						// set the text of the save button
+				        modal.find('.modalsave').html(buttontxt);				         				        
+					}		            
+					modal.foundation('reveal','open');										
+					
+				}).fail( function( response ) {
+					modal.find('.modal-body').empty().html("We're sorry, there was a problem loading your request");
+					modal.foundation('reveal','open');					
+				});
+
+				modal.on('closed', function(){ 
+					modal.removeClass(modalclass).removeClass('show-footer');					
+					modal.find('.modal-header-title').html('');
+					modal.find('.modalsave').html('Save').removeAttr("id");
+					$('.reveal-modal-bg').hide();
+				}); // end on close
+
+			}); // end on click
+			
+			$('[data-dismiss="modal"]').on('click',function(){
+				$(this).closest('.reveal-modal').find('.close-reveal-modal').trigger('click');
+			});
+			
+			if( $('#bb_header').width() < '941' ){
+				$('body').on('click', '#main_nav ul.left a.bb_main_navigation', function() {
+					$(this).closest('.top-bar').find('.toggle-topbar').trigger('click');
+			    });
+				$('body').on('click', '#sub_nav li a.category', function() {
+					$(this).closest('.top-bar').find('.toggle-topbar').trigger('click');
+			    });
+			}
+			
+			
+	}); // end doc	
+
+	/*
+	* * Use this Link format when targetting #bb-modal
+	*
+	<a href="" 
+		class="beam-link bb-modal"   
+		data-modal-title="TITLE HERE"
+		data-modal-class="CLASS HERE (eg. tiny, small, medium, large, xlarge.)"
+		data-button-id="ID OF SAVE BUTTON"
+		data-button-txt="TXT OF SAVE BUTTON"
+		data-reveal-id="bb-modal"
+		data-target-url=""
+		data-reveal-ajax="true" >
+	*
+	*/
+	</script>
+	
+	<div id="bb-modal" class="reveal-modal" data-reveal>
+		<div class="modal-header">
+			<div class="modal-header-title">Information</div>		    
+		</div>
+	    <div class="modal-body"></div>
+	    <div class="modal-footer"> 
+		    <button class="btn" data-dismiss="modal" id="cancel" aria-hidden="true">Close</button>
+	        <button class="btn btn-primary modalsave" >Save</button>
+	    </div>
+	  	<a class="close-reveal-modal">×</a>
+	</div>
+	<script>
+		$(document).foundation();
+	</script>
+	<div class="loadingScreen"><!-- Place at bottom of page --></div>
+</body>
+</html>
